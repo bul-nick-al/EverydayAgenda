@@ -3,7 +3,7 @@ import { TabNavigator, TabBarBottom } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 import ImpressionEdit from '../screens/ImpressionEdit'
 import Stories from '../screens/Stories'
-import Impression from "./Impression";
+import Impression from "../screens/Impression";
 // import { Icon } from 'react-native-elements';
 export const Tabs = TabNavigator({
     Stories: {
@@ -20,16 +20,16 @@ export const Tabs = TabNavigator({
     },
 },
     {
-        tabBarOptions: {
-            style: {
-                height: 0,
-                overflow:'hidden',
-            },
+        // tabBarOptions: {
+        //     style: {
+        //         height: 0,
+        //         overflow:'hidden',
+        //     },
+        //
+        // },
 
-        },
-
-        initialRouteName: 'Impression',
-        tabBarComponent: TabBarBottom,
+        // initialRouteName: 'Impression',
+        tabBarComponent: ()=>null,
         tabBarPosition: 'bottom',
         animationEnabled: true,
         swipeEnabled: true,
