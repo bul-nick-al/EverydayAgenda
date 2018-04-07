@@ -1,6 +1,6 @@
 
 import React, { Component,  } from 'react';
-import { View, AsyncStorage } from 'react-native';
+import { View, AsyncStorage, Text } from 'react-native';
 import {Tabs } from './Config/router';
 import { BluredBackground } from '../app/Components/BluredBackground/'
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -17,20 +17,53 @@ EStyleSheet.build({
     $border: '#E2E2E2',
     $inputText: '#797979',
     $darkText: '#343434',
+
+    // $outline: 1
 });
 
 class App extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            token: '',
+            isFetching: true
+        };
+    }
+
+    componentDidMount(){
+        AsyncStorage.getItem('token').then((value) => {
+            this.setState({
+                token: value,
+                isFetching: false
+            });
+        })
+    }
+
+
     render() {
-        if (AsyncStorage.getItem('token') !== null)
+
+        if (this.state.isFetching)
             return (
-                <View style={{flex: 1, backgroundColor: 'skyblue'}}>
-                    <BluredBackground>
-                        <Tabs/>
-                    </BluredBackground>
-                </View>
+                <BluredBackground/>
             );
-        else
-            return Login;
+        else {
+            if (this.state.token !== null)
+                return (
+                    <View style={{flex: 1, backgroundColor: 'skyblue'}}>
+                        <BluredBackground>
+                            <Text>
+                                {this.state.token}
+                            </Text>
+                            <Tabs/>
+                        </BluredBackground>
+                    </View>
+                );
+            else
+                return (
+                    <Login/>
+                );
+        }
     }
 }
 

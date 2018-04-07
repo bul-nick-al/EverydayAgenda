@@ -1,12 +1,12 @@
 import React from 'react';
 import {ImageBackground, Platform, View} from 'react-native';
 import styles from './styles'
-const BluredBackground = ({children}) => (
+const BluredBackground = ({image, children}) => (
         <ImageBackground
             style={styles.image}
-            source={require('../../images/login-background.jpg')}
+            source={image}
             resizeMode='cover'
-            blurRadius={Platform.OS === 'ios' ? 2 : 1}
+            blurRadius={Platform.OS === 'ios' ? 3 : 1}
         >
             <View style={styles.filter}>
                 {children}

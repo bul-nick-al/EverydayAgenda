@@ -7,6 +7,8 @@ export default EStyleSheet.create({
     },
     filter: {
         flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
         backgroundColor: '#6E7B8B70',
         // opacity: 0.4
     }
