@@ -12,7 +12,7 @@ const PhotoContainer = ({image, children}) => (
     </View>
 );
 
-Container.propTypes = {
+PhotoContainer.propTypes = {
     children: PropTypes.any,
 };
 
