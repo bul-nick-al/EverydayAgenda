@@ -1,13 +1,13 @@
 /**
- * Created by Nastya on 07.04.2018.
+ * Created by Nastya on 08.04.2018.
  */
 import React from 'react';
 import PropTypes from 'prop-types';
 import {View, Image} from 'react-native';
 import styles from './styles'
 
-const PhotoContainer = ({image, children}) => (
-    <View style={styles.photoContainer}>
+const Audio = ({children}) => (
+    <View style={styles.audio}>
         {children}
     </View>
 );
@@ -17,4 +17,3 @@ Container.propTypes = {
 };
 
 export default PhotoContainer;
-
