@@ -4,6 +4,7 @@ import {BluredBackground} from '../../app/Components/BluredBackground/'
 import InputWithText from "../Components/InputWithText/InputWithText";
 import {ButtonWithBorders} from "../Components/ButtonWithBorders/";
 import {TouchableText} from "../Components/TouchableText/";
+import {Logo} from '../Components/Logo';
 
 class Login extends Component {
 
@@ -13,6 +14,7 @@ class Login extends Component {
 
             <BluredBackground image={require('../res/images/backgrounds/login-background.jpg')}>
                 <View style={{flex:1, alignItems: 'center', justifyContent: 'center'}}>
+                    <Logo/>
                     <InputWithText text="Username"/>
                     <InputWithText text="Password"/>
                     <ButtonWithBorders text="Login"/>

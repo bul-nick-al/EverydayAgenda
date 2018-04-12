@@ -8,13 +8,9 @@ import styles from './styles'
 
 const PhotoContainer = ({image, children}) => (
     <View style={styles.photoContainer}>
-        {children}
+        <Image resizeMode="cover" style={styles.image} source={require('../../images/1.jpg')}/>
     </View>
 );
-
-PhotoContainer.propTypes = {
-    children: PropTypes.any,
-};
 
 export default PhotoContainer;
 
