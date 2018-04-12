@@ -1,7 +1,9 @@
 import React from 'react';
 import {ImageBackground, Platform, View} from 'react-native';
 import styles from './styles'
-const BluredBackground = ({image, children}) => (
+const BluredBackground = ({image = require('../../images/1.jpg'), children}) => {
+    console.log(children);
+    return (
         <ImageBackground
             style={styles.image}
             source={image}
@@ -12,6 +14,7 @@ const BluredBackground = ({image, children}) => (
                 {children}
             </View>
         </ImageBackground>
-);
+    )
+};
 
 export default BluredBackground;

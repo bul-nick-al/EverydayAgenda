@@ -1,10 +1,9 @@
 
-import React, { Component,  } from 'react';
-import { View, AsyncStorage, Text } from 'react-native';
-import {Tabs } from './Config/router';
-import { BluredBackground } from '../app/Components/BluredBackground/'
+import React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
-import Login from '../app/screens/Login'
+import {Provider} from "react-redux";
+import store from './Config/store';
+import Authentication from "./screens/Authentication";
 
 EStyleSheet.build({
     $primaryBlue: '#4F6D7A',
@@ -21,50 +20,9 @@ EStyleSheet.build({
     // $outline: 1
 });
 
-class App extends Component {
+export default () => (
+    <Provider store={store}>
+        <Authentication/>
+    </Provider>
+);
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            token: '',
-            isFetching: true
-        };
-    }
-
-    componentDidMount(){
-        AsyncStorage.getItem('token').then((value) => {
-            this.setState({
-                token: value,
-                isFetching: false
-            });
-        })
-    }
-
-
-    render() {
-
-        if (this.state.isFetching)
-            return (
-                <BluredBackground/>
-            );
-        else {
-            if (this.state.token !== null)
-                return (
-                    <View style={{flex: 1, backgroundColor: 'skyblue'}}>
-                        <BluredBackground>
-                            <Text>
-                                {this.state.token}
-                            </Text>
-                            <Tabs/>
-                        </BluredBackground>
-                    </View>
-                );
-            else
-                return (
-                    <Login/>
-                );
-        }
-    }
-}
-
-export default App;

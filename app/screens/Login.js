@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import {BluredBackground} from '../../app/Components/BluredBackground/'
 import InputWithText from "../Components/InputWithText/InputWithText";
 import {ButtonWithBorders} from "../Components/ButtonWithBorders/";
@@ -12,10 +12,12 @@ class Login extends Component {
         return (
 
             <BluredBackground image={require('../images/login-background.jpg')}>
-                <InputWithText text="Username"/>
-                <InputWithText text="Password"/>
-                <ButtonWithBorders text="Login"/>
-                <TouchableText text="If you have an account please Sign Up"/>
+                <View style={{flex:1, alignItems: 'center', justifyContent: 'center'}}>
+                    <InputWithText text="Username"/>
+                    <InputWithText text="Password"/>
+                    <ButtonWithBorders text="Login"/>
+                    <TouchableText text="If you have an account please Sign Up"/>
+                </View>
             </BluredBackground>
         );
     }

@@ -1,10 +1,29 @@
 import React from 'react';
-import { TabNavigator, TabBarBottom } from 'react-navigation';
-import { Icon } from 'react-native-elements';
+import { TabNavigator, StackNavigator } from 'react-navigation';
 import ImpressionEdit from '../screens/ImpressionEdit'
 import Stories from '../screens/Stories'
 import Impression from "../screens/Impression";
-// import { Icon } from 'react-native-elements';
+
+const HomeStack = StackNavigator(
+    {
+        Impression: {
+            screen: ImpressionEdit,
+            navigationOptions: {
+                // header: ()=>(<Login/>)
+            },
+        },
+    },
+    {
+        mode: 'card',
+        cardStyle: { backgroundColor: 'transparent' },
+        transitionConfig: () => ({
+            containerStyle: {
+                backgroundColor: 'transparent',
+            }
+        }),
+    }
+);
+
 export const Tabs = TabNavigator({
     Stories: {
         screen: Stories,
@@ -13,22 +32,11 @@ export const Tabs = TabNavigator({
 
     },
     Impression: {
-        screen: ImpressionEdit,
-        navigationOptions: {
-
-        },
+        screen: HomeStack
     },
 },
     {
-        // tabBarOptions: {
-        //     style: {
-        //         height: 0,
-        //         overflow:'hidden',
-        //     },
-        //
-        // },
-
-        // initialRouteName: 'Impression',
+        initialRouteName: 'Impression',
         tabBarComponent: ()=>null,
         tabBarPosition: 'bottom',
         animationEnabled: true,

@@ -10,6 +10,6 @@ export default EStyleSheet.create({
         // flex: 1,
         // alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '$primaryColor',
+        backgroundColor: '$primaryBlue',
     },
 });
