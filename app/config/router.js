@@ -8,7 +8,7 @@ import {CalendarHeader} from '../Components/CalendarHeader'
 const HomeStack = StackNavigator(
     {
         Impression: {
-            screen: ImpressionEdit,
+            screen: Impression,
             navigationOptions: {
                 header: ()=>(<CalendarHeader/>)
             },

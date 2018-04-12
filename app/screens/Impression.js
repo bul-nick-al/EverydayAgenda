@@ -1,19 +1,17 @@
 import React, {Component} from 'react';
-import {ScrollView} from 'react-native';
-import {Text,} from 'react-native-elements';
-import {BluredBackground} from '../Components/BluredBackground'
-import {PhotoContainer} from '../Components/PhotoContainer'
+import {ScrollView, View} from 'react-native';
+import {PhotoContainer} from '../Components/PhotoContainer';
+import {VideoContainer} from "../Components/VideoContainer";
 
 class Impression extends Component {
     render() {
         return (
-            <BluredBackground image={require('../res/images/backgrounds/5.jpg')}>
+            <View style={{flex: 1, backgroundColor: 'transparent', justifyContent: 'center'}}>
                 <ScrollView>
-                    <PhotoContainer>
-                        <Text> Photo </Text>
-                    </PhotoContainer>
+                    <PhotoContainer/>
+                    <VideoContainer/>
                 </ScrollView>
-            </BluredBackground>
+            </View>
         )
     }
 }

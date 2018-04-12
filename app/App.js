@@ -1,9 +1,10 @@
-
 import React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import {Provider} from "react-redux";
 import store from './config/store';
-import Authentication from "./screens/Authentication";
+import {BluredBackground} from "./Components/BluredBackground";
+import {SafeAreaView} from "react-native";
+import {Tabs} from "./config/router";
 
 EStyleSheet.build({
     $primaryBlue: '#4F6D7A',
@@ -17,13 +18,18 @@ EStyleSheet.build({
     $inputText: '#797979',
     $darkText: '#343434',
     $backgroundFilter: '#6E7B8B70',
+    $fontAvenir: 'AvenirNext-UltraLight',
 
     $outline: 1
 });
 
 export default () => (
     <Provider store={store}>
-        <Authentication/>
+        <BluredBackground image={require('./res/images/backgrounds/2.jpg')}>
+            <SafeAreaView style={{flex: 1}}>
+                <Tabs/>
+            </SafeAreaView>
+        </BluredBackground>
     </Provider>
 );
 

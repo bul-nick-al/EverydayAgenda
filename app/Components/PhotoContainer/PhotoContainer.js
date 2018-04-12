@@ -8,7 +8,7 @@ import styles from './styles'
 
 const PhotoContainer = ({image, children}) => (
     <View style={styles.photoContainer}>
-        <Image resizeMode="cover" style={styles.image} source={require('../../images/1.jpg')}/>
+        <Image resizeMode="cover" style={styles.image} source={require('../../res/images/backgrounds/1.jpg')}/>
     </View>
 );
 

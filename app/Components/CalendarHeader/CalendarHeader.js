@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import {Text, View} from "react-native";
-import DatePicker from 'react-native-datepicker';
 import styles from './styles';
 import {ButtonWithIcon} from "../ButtonWithIcon/";
 
