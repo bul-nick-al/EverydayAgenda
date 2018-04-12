@@ -3,13 +3,14 @@ import { TabNavigator, StackNavigator } from 'react-navigation';
 import ImpressionEdit from '../screens/ImpressionEdit'
 import Stories from '../screens/Stories'
 import Impression from "../screens/Impression";
+import {CalendarHeader} from '../Components/CalendarHeader'
 
 const HomeStack = StackNavigator(
     {
         Impression: {
             screen: ImpressionEdit,
             navigationOptions: {
-                // header: ()=>(<Login/>)
+                header: ()=>(<CalendarHeader/>)
             },
         },
     },

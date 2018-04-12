@@ -11,7 +11,7 @@ class Login extends Component {
     render() {
         return (
 
-            <BluredBackground image={require('../images/login-background.jpg')}>
+            <BluredBackground image={require('../res/images/backgrounds/login-background.jpg')}>
                 <View style={{flex:1, alignItems: 'center', justifyContent: 'center'}}>
                     <InputWithText text="Username"/>
                     <InputWithText text="Password"/>

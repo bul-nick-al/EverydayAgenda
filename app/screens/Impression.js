@@ -7,7 +7,7 @@ import {PhotoContainer} from '../Components/PhotoContainer'
 class Impression extends Component {
     render() {
         return (
-            <BluredBackground image={require('../images/5.jpg')}>
+            <BluredBackground image={require('../res/images/backgrounds/5.jpg')}>
                 <ScrollView>
                     <PhotoContainer>
                         <Text> Photo </Text>

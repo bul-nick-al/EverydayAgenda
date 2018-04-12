@@ -2,7 +2,7 @@
 import React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import {Provider} from "react-redux";
-import store from './Config/store';
+import store from './config/store';
 import Authentication from "./screens/Authentication";
 
 EStyleSheet.build({
@@ -16,8 +16,9 @@ EStyleSheet.build({
     $border: '#E2E2E2',
     $inputText: '#797979',
     $darkText: '#343434',
+    $backgroundFilter: '#6E7B8B70',
 
-    // $outline: 1
+    $outline: 1
 });
 
 export default () => (

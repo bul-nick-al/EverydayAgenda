@@ -5,7 +5,7 @@ import BluredBackground from "../Components/BluredBackground/BluredBackground";
 import Login from "./Login";
 import {isUserLoggedIn} from "../actions/authentication";
 import Text from "react-native-elements/src/text/Text";
-import {Tabs} from "../Config/router";
+import {Tabs} from "../config/router";
 import {SafeAreaView} from "react-native";
 
 class Authentication extends Component {
@@ -32,7 +32,7 @@ class Authentication extends Component {
         else {
             if (this.props.isLogged)
                 return (
-                    <BluredBackground image={require('../images/2.jpg')}>
+                    <BluredBackground image={require('../res/images/backgrounds/2.jpg')}>
                         <SafeAreaView style={{flex:1}}>
                         <Tabs/>
                         </SafeAreaView>

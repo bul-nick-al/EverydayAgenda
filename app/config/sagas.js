@@ -9,7 +9,7 @@ function* fetchLocalAuthenticationToken(){
     try {
         yield AsyncStorage.setItem('token','hii');
         let token = yield call(getItemFromStorage, TOKEN);
-        if (token == null) {
+        if (token === null) {
             yield put({type: IS_NOT_LOGGED})
         } else {
             yield put({type: IS_LOGGED, token: token})
