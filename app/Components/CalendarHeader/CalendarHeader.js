@@ -6,6 +6,10 @@ import {ButtonWithIcon} from "../ButtonWithIcon/";
 import {TextInputMask} from 'react-native-masked-text'
 import moment from 'moment';
 import {connect} from "react-redux";
+import {
+    formatDateStringForCalender
+} from "../../utils/date";
+import {nextDate, previousDate} from "../../actions/calendar";
 
 class CalendarHeader extends Component {
     static propTypes = {};
@@ -14,11 +18,19 @@ class CalendarHeader extends Component {
     //     super(props);
     //     {onPress} = props
     // }
+    nextDayClicked = () => {
+        this.props.dispatch(nextDate());
+    };
+
+    previousDayClicked = () => {
+        this.props.dispatch(previousDate());
+    };
 
     render() {
         return (
             <View style={styles.header}>
-                <ButtonWithIcon image={require('../../res/images/buttons/left-arrow.png')}/>
+                <ButtonWithIcon image={require('../../res/images/buttons/left-arrow.png')}
+                                onPress ={this.previousDayClicked}/>
                 <View style={styles.container}>
                     <TouchableOpacity onPress={this.props.onPress} style={styles.touchable}>
                         <Text style={styles.date}>
@@ -26,7 +38,8 @@ class CalendarHeader extends Component {
                         </Text>
                     </TouchableOpacity>
                 </View>
-                <ButtonWithIcon image={require('../../res/images/buttons/right-arrow.png')}/>
+                <ButtonWithIcon image={require('../../res/images/buttons/right-arrow.png')}
+                                onPress ={this.nextDayClicked}/>
             </View>
         );
     }
@@ -35,18 +48,7 @@ class CalendarHeader extends Component {
 
 
 mapStateToProps = (state) => {
-    let date = '';
-    switch (state.calendar.date) {
-        case (moment(new Date()).format('YYYY-MM-DD')): {
-            date = 'Today';
-            break;
-        }
-        case (moment(new Date().setDate(new Date().getDate()-1)).format('YYYY-MM-DD')): {
-            date = 'Yesterday';
-            break;
-        }
-        default: date = moment(new Date(state.calendar.date)).format('MMMM D, YYYY');
-    }
+    let date = formatDateStringForCalender(state.calendar.date);
     return ({
         date: date
     });

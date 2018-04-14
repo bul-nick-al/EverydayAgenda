@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
-import {Platform, View} from 'react-native';
-import BluredBackground from "../Components/BluredBackground/BluredBackground";
 import {Calendar} from "react-native-calendars";
-import {ButtonWithIcon} from "../Components/ButtonWithIcon/";
 import {StyleSheet} from 'react-native';
-import moment from 'moment';
 import {connect} from "react-redux";
 import {dateChange} from "../actions/calendar";
 
