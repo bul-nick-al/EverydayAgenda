@@ -6,7 +6,7 @@ import styles from './styles';
 
 const ButtonWithIcon = ({ image,onPress }) => (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-        <Image resizeMode='cover' style={styles.icon} source={image}/>
+        <Image resizeMode='contain' style={styles.icon} source={image}/>
     </TouchableOpacity>
 );
 

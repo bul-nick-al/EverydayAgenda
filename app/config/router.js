@@ -4,25 +4,35 @@ import ImpressionEdit from '../screens/ImpressionEdit'
 import Stories from '../screens/Stories'
 import Impression from "../screens/Impression";
 import {CalendarHeader} from '../Components/CalendarHeader'
+import CalendarScreen from "../screens/CalendarScreen";
+
+const onCalendarPress = () => this.navigate('CalendarScreen');
 
 const HomeStack = StackNavigator(
     {
         Impression: {
             screen: Impression,
             navigationOptions: {
-                header: ()=>(<CalendarHeader/>)
+                header: (props)=>(<CalendarHeader editable={false} onPress={() => props.navigation.navigate('CalendarScreen')}/>)
+            },
+        },
+
+        CalendarScreen: {
+            screen: CalendarScreen,
+            navigationOptions: {
+                header: ()=>null
             },
         },
     },
     {
-        mode: 'card',
+        mode: 'modal',
         cardStyle: { backgroundColor: 'transparent' },
         transitionConfig: () => ({
             containerStyle: {
                 backgroundColor: 'transparent',
             }
         }),
-    }
+    },
 );
 
 export const Tabs = TabNavigator({

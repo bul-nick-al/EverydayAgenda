@@ -2,7 +2,6 @@ import React from 'react';
 import {ImageBackground, Platform, View} from 'react-native';
 import styles from './styles'
 const BluredBackground = ({image = require('../../res/images/backgrounds/1.jpg'), children}) => {
-    console.log(children);
     return (
         <ImageBackground
             style={styles.image}

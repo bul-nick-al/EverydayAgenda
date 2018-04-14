@@ -17,7 +17,7 @@ class Login extends Component {
                     <Logo/>
                     <InputWithText text="Username"/>
                     <InputWithText text="Password"/>
-                    <ButtonWithBorders text="Login"/>
+                    <ButtonWithBorders text="Login" onPress={this.props.press}/>
                     <TouchableText text="If you have an account please Sign Up"/>
                 </View>
             </BluredBackground>

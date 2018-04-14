@@ -16,7 +16,6 @@ class Authentication extends Component {
 
     componentDidMount() {
         this.props.dispatch(isUserLoggedIn());
-
     }
 
     render() {

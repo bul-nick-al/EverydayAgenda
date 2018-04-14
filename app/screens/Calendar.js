@@ -1,2 +1,0 @@
-//privet Nastya
-//dratuy Kolya
