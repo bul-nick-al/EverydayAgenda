@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {ScrollView, View} from 'react-native';
 import {PhotoContainer} from '../Components/PhotoContainer';
 import {VideoContainer} from "../Components/VideoContainer";
+import {TextNote} from "../Components/TextNote";
 
 class Impression extends Component {
     render() {
@@ -10,6 +11,7 @@ class Impression extends Component {
                 <ScrollView>
                     <PhotoContainer/>
                     <VideoContainer/>
+                    <TextNote/>
                 </ScrollView>
             </View>
         )

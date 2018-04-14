@@ -17,8 +17,6 @@ EStyleSheet.build({
     $darkText: '#343434',
     $backgroundFilter: '#6E7B8B70',
     $fontAvenir: 'AvenirNext-UltraLight',
-
-    // $outline: 1
 });
 
 export default () => (
