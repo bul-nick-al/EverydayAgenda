@@ -11,7 +11,7 @@ export default EStyleSheet.create({
         padding: 15,
     },
     image: {
-        height: '100%',
+        height: maxHeight,
         width: '100%',
         borderRadius: 7
     },
