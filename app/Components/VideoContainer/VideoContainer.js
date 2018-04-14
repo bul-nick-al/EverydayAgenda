@@ -10,7 +10,7 @@ const VideoContainer = ({children}) => (
     <View style={styles.videoContainer}>
         <View style={styles.video}>
             <Video style={styles.vid} repeat={true} resizeMode={"cover"}
-                   source={require('../../res/videos/doc_25.mp4')}/>
+                   source={require('../../res/videos/test.mp4')}/>
         </View>
     </View>
 );
