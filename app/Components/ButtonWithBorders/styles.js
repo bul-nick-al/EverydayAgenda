@@ -10,7 +10,7 @@ export default EStyleSheet.create({
         alignItems: 'center',
         borderWidth: StyleSheet.hairlineWidth,
         borderColor: '$white',
-        borderRadius: 10
+        borderRadius: 10,
     },
     text: {
         color: '$white',
@@ -18,5 +18,6 @@ export default EStyleSheet.create({
         paddingHorizontal: 30,
         paddingBottom: 5,
         fontWeight: '300',
+        fontFamily: '$fontAvenir',
     },
 });
