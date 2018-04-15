@@ -3,6 +3,7 @@ import {ScrollView, View} from 'react-native';
 import {PhotoContainer} from '../Components/PhotoContainer';
 import {VideoContainer} from "../Components/VideoContainer";
 import {TextNote} from "../Components/TextNote";
+import {GeotagContainer} from "../Components/GeotagContainer";
 
 class Impression extends Component {
     render() {
@@ -12,6 +13,7 @@ class Impression extends Component {
                     <PhotoContainer/>
                     <VideoContainer/>
                     <TextNote/>
+                    {/*<GeotagContainer/>*/}
                 </ScrollView>
             </View>
         )
