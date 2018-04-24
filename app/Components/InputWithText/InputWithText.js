@@ -4,13 +4,13 @@ import { Text,  View, TextInput } from 'react-native';
 
 import styles from './styles';
 
-const InputWithText = ({ text}) => {
+const InputWithText = ({text, secureTextEntry = false, onChangeText}) => {
     return(
         <View style={styles.container}>
             <Text style={styles.label}>
                 {text}
             </Text>
-            <TextInput style={styles.input} underlineColorAndroid='transparent' selectionColor={'white'}/>
+            <TextInput onChangeText={onChangeText} style={styles.input} secureTextEntry={secureTextEntry} underlineColorAndroid='transparent' selectionColor={'white'}/>
         </View>
     )
 }

@@ -1,16 +1,31 @@
-import {OPEN_CALENDAR} from "../actions/impression";
+import {IMPRESSION_LOADED, LOAD_IMPRESSION} from "../actions/impression";
 
 
 const initialState = {
-    pickedDate: new Date(),
+    isFetching: true,
     todayImpressionSubmitted: false,
-    impressionIsLoaded: false,
-    impression:{}
+    impression: {
+        imageid: '',
+        videoid: '',
+        text: ''
+    }
 };
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case OPEN_CALENDAR:
+        case LOAD_IMPRESSION:
+            return{
+                ...state,
+                isFetching: true,
+            };
+        case IMPRESSION_LOADED:{
+            return{
+                ...state,
+                isFetching: false,
+                impression: action.impression
+            }
+        }
+        default: return state
 
     }
 }

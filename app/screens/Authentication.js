@@ -7,6 +7,8 @@ import {isUserLoggedIn} from "../actions/authentication";
 import Text from "react-native-elements/src/text/Text";
 import {Tabs} from "../config/router";
 import {SafeAreaView} from "react-native";
+import {dateChange, initialDate} from "../actions/calendar";
+import {currentDateString} from "../utils/date";
 
 class Authentication extends Component {
     static propTypes = {
@@ -23,20 +25,20 @@ class Authentication extends Component {
             return (
                 <BluredBackground>
                     <Text>
-                        hiiiii
                     </Text>
                 </BluredBackground>
             )
         }
         else {
-            if (this.props.isLogged)
+            if (this.props.isLogged){
+                this.props.dispatch(dateChange(currentDateString()));
                 return (
                     <BluredBackground image={require('../res/images/backgrounds/2.jpg')}>
                         <SafeAreaView style={{flex:1}}>
                         <Tabs/>
                         </SafeAreaView>
                     </BluredBackground>
-                );
+                );}
             else
                 return (
                     <Login/>

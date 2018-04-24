@@ -1,5 +1,6 @@
 import {CHECK_USER_LOGGED_IN, IS_LOGGED, IS_NOT_LOGGED, LOGIN} from "../actions/authentication";
 
+
 const initialState = {
     logged: false,
     isFetching: true,
@@ -22,7 +23,7 @@ export default (state = initialState, action) => {
         case IS_LOGGED:
             return {
                 ...state,
-                token: state.token,
+                token: action.token,
                 logged: true,
                 isFetching: false
             };

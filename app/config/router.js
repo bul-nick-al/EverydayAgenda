@@ -2,7 +2,7 @@ import React from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import ImpressionEdit from '../screens/ImpressionEdit'
 import Stories from '../screens/Stories'
-import Impression from "../screens/Impression";
+import ImpressionScreen from "../screens/ImpressionScreen";
 import {CalendarHeader} from '../Components/CalendarHeader'
 import CalendarScreen from "../screens/CalendarScreen";
 
@@ -11,7 +11,7 @@ const onCalendarPress = () => this.navigate('CalendarScreen');
 const HomeStack = StackNavigator(
     {
         Impression: {
-            screen: Impression,
+            screen: ImpressionScreen,
             navigationOptions: {
                 header: (props)=>(<CalendarHeader editable={false} onPress={() => props.navigation.navigate('CalendarScreen')}/>)
             },

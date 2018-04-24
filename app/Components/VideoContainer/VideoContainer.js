@@ -6,11 +6,11 @@ import {View} from 'react-native';
 import styles from './styles';
 import Video from "react-native-video";
 
-const VideoContainer = ({children}) => (
+const VideoContainer = ({children, videoURL=''}) => (
     <View style={styles.videoContainer}>
         <View style={styles.video}>
             <Video style={styles.vid} repeat={true} resizeMode={"cover"}
-                   source={require('../../res/videos/doc_25.mp4')}/>
+                   source={{'uri':videoURL}}/>
         </View>
     </View>
 );

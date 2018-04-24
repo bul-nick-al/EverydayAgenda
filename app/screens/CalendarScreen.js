@@ -3,6 +3,7 @@ import {Calendar} from "react-native-calendars";
 import {StyleSheet} from 'react-native';
 import {connect} from "react-redux";
 import {dateChange} from "../actions/calendar";
+import {loadImpression} from "../actions/impression";
 
 class CalendarScreen extends Component {
     constructor(props) {

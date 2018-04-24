@@ -1,5 +1,14 @@
-export const OPEN_CALENDAR = 'OPEN_CALENDAR';
+import {currentDateString} from "../utils/date";
 
-const openCalendar = () => ({
-    type: OPEN_CALENDAR
+export const LOAD_IMPRESSION = 'LOAD_IMPRESSION';
+export const IMPRESSION_LOADED ='IMPRESSION_LOADED';
+
+export const loadImpression = (date) => ({
+    type: LOAD_IMPRESSION,
+    date: date
+});
+
+export const loadInitialImpression = () => ({
+    type: LOAD_IMPRESSION,
+    date: currentDateString()
 });

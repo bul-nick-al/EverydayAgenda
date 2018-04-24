@@ -8,11 +8,11 @@ import styles from './styles';
 global.SampleVar = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.';
 
 let text = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.';
-const TextNote = ({children}) => (
+const TextNote = ({children, text}) => (
     <View style={styles.textContainer1}>
         <View style={styles.textContainer}>
             <Text style={styles.text}>
-                {global.SampleVar}
+                {text}
             </Text>
         </View>
     </View>
