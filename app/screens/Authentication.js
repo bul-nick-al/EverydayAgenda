@@ -25,6 +25,7 @@ class Authentication extends Component {
             return (
                 <BluredBackground>
                     <Text>
+                        hii
                     </Text>
                 </BluredBackground>
             )
