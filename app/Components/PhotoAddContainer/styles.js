@@ -16,7 +16,8 @@ export default EStyleSheet.create({
         padding: 15,
         borderRadius: maxWidth / 2,
         backgroundColor: '$backgroundFilter',
-        // height: maxHeight,
+        width: maxWidth - 30,
+        height: maxWidth - 30,
         alignItems: 'center',
     },
     image: {

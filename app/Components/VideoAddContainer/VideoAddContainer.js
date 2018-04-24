@@ -9,7 +9,8 @@ import styles from './styles';
 const VideoAddContainer = ({image, children}) => (
     <View style={styles.mainContainer}>
         <View style={styles.videoAddContainer}>
-            <Image resizeMode="cover" style={styles.image} source={require('../../res/images/icons/video-player.png')}/>
+            <Image resizeMode="contain" style={styles.image}
+                   source={require('../../res/images/icons/video-player.png')}/>
         </View>
     </View>
 );

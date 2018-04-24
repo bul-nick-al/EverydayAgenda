@@ -9,8 +9,10 @@ import styles from './styles';
 const TextAddContainer = ({image, children}) => (
     <View style={styles.mainContainer}>
         <View style={styles.textAddContainer}>
-            <Image resizeMode="cover" style={styles.image}
-                   source={require('../../res/images/icons/text-document.png')}/>
+            <Image
+                resizeMode="contain"
+                style={styles.image}
+                source={require('../../res/images/icons/text-document.png')}/>
         </View>
     </View>
 );

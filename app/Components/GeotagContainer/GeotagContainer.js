@@ -4,7 +4,6 @@
 import React from 'react';
 import {View} from 'react-native';
 import styles from './styles';
-import MapView from 'react-native-maps';
 
 const GeotagContainer = ({children}) => (
     <View style={styles.geotagContainer1}>
