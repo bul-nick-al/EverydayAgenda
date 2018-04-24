@@ -80,7 +80,7 @@ class Stories extends Component{
 
     render() {
         return (
-            <View style={{flex: 1, backgroundColor: 'transparent', justifyContent:'center'}}>s
+            <View style={{flex: 1, backgroundColor: 'transparent', justifyContent:'center'}}>
                 <Text
                     style={{
                         textAlign: 'center',
@@ -88,9 +88,8 @@ class Stories extends Component{
                         color: 'white'
                     }}
                 >
-
+                    Hello
                 </Text>
-                <ButtonWithBorders text={'log out'} onPress={()=>AsyncStorage.clear()}/>
             </View>
         )
     }

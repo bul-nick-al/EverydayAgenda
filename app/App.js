@@ -1,6 +1,6 @@
 import React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
-import {Provider} from "react-redux";
+import {Provider} from 'react-redux';
 import store from './config/store';
 import Authentication from "./screens/Authentication";
 
