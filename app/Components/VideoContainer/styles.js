@@ -14,6 +14,7 @@ export default EStyleSheet.create({
     video: {
         borderRadius: 7,
         overflow: 'hidden'
+
     },
     vid: {
         height: maxHeight,

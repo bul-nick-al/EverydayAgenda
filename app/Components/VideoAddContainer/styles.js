@@ -11,11 +11,12 @@ export default EStyleSheet.create({
     mainContainer: {
         padding: 15,
         width: maxWidth,
-        // height: maxH,
     },
     videoAddContainer: {
         padding: 15,
         borderRadius: 100,
+        width: maxWidth - 30,
+        height: maxWidth - 30,
         backgroundColor: '$backgroundFilter',
         alignItems: 'center',
     },
