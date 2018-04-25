@@ -5,9 +5,10 @@ import {Dimensions} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 const maxWidth = Dimensions.get('window').width / 2;
-const maxH = maxWidth;
 
 export default EStyleSheet.create({
+    $buttonBackgroundColorbase: '$backgroundFilter',
+    $buttonBackgroundColorModifier: '0.1',
     mainContainer: {
         padding: 15,
         width: maxWidth,
@@ -19,10 +20,15 @@ export default EStyleSheet.create({
         height: maxWidth - 30,
         backgroundColor: '$backgroundFilter',
         alignItems: 'center',
+        overflow: 'hidden',
     },
     image: {
         flex: 1,
         height: 90,
         width: 90,
+    },
+    videoBackground: {
+        width: maxWidth,
+        height: maxWidth,
     },
 });
