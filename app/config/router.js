@@ -35,9 +35,37 @@ const HomeStack = StackNavigator(
     },
 );
 
+const StoriesNavigator = StackNavigator(
+    {
+        Stories: {
+            screen: Stories,
+            navigationOptions: {
+                header: ()=>null
+            },
+        },
+
+        Story: {
+            screen: ImpressionScreen,
+            navigationOptions: {
+                header: ()=>null
+            },
+        },
+    },
+    {
+        mode: 'modal',
+        cardStyle: { backgroundColor: 'transparent' },
+        transitionConfig: () => ({
+            containerStyle: {
+                backgroundColor: 'transparent',
+            }
+        }),
+    },
+);
+
+
 export const Tabs = TabNavigator({
     Stories: {
-        screen: Stories,
+        screen: StoriesNavigator,
         navigationOptions: {
         },
 

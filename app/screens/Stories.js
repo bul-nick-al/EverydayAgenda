@@ -3,6 +3,7 @@ import { ScrollView, View, Image, Text, ImageBackground } from 'react-native';
 import TextUnderlined from "../Components/TextUnderlined/TextUnderlined";
 import TileWithBackground from "../Components/TileWithBackground/TileWithBackground";
 import GridView from 'react-native-super-grid';
+import {StackNavigator} from 'react-navigation';
 
 class Stories extends Component {
 
@@ -10,7 +11,6 @@ class Stories extends Component {
         stories: [["Day ago", 'https://cdn-images-1.medium.com/max/1600/1*O5e4-dHGufM97GcAITeX6Q.png'], ['Month ago', 'https://cdn-images-1.medium.com/max/1600/1*O5e4-dHGufM97GcAITeX6Q.png'],
             ["Year ago", 'https://cdn-images-1.medium.com/max/1600/1*O5e4-dHGufM97GcAITeX6Q.png'], ["Forever ago", 'https://cdn-images-1.medium.com/max/1600/1*O5e4-dHGufM97GcAITeX6Q.png']]
     }
-
 
 
     render() {
@@ -23,6 +23,9 @@ class Stories extends Component {
                         renderItem={item => (<TileWithBackground
                             text = {item[0]}
                             image = {{'uri': item[1]}}
+                            onPress={() =>
+                                this.props.navigation.navigate('Story')
+                            }
                         />)}
                     />
                 </ScrollView>
