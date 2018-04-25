@@ -3,11 +3,12 @@ package com.everydayagenda;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.brentvatne.react.ReactVideoPackage;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.imagepicker.ImagePickerPackage;
 import com.rnfs.RNFSPackage;
 import fr.bamlab.rnimageresizer.ImageResizerPackage;
 import com.imagepicker.ImagePickerPackage;
-import com.brentvatne.react.ReactVideoPackage;
-import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -28,11 +29,11 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new RNFSPackage(),
-            new ImageResizerPackage(),
-            new ImagePickerPackage(),
             new ReactVideoPackage(),
-            new VectorIconsPackage()
+            new VectorIconsPackage(),
+            new ImagePickerPackage(),
+            new RNFSPackage(),
+            new ImageResizerPackage()
       );
     }
 

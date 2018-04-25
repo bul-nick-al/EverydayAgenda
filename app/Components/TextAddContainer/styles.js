@@ -7,6 +7,8 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 const maxWidth = Dimensions.get('window').width / 2;
 
 export default EStyleSheet.create({
+    $buttonBackgroundColorbase: '$backgroundFilter',
+    $buttonBackgroundColorModifier: 0.1,
     mainContainer: {
         padding: 15,
         width: maxWidth,
@@ -23,5 +25,9 @@ export default EStyleSheet.create({
         flex: 1,
         height: 90,
         width: 90,
+    },
+    text: {
+        fontFamily: '$fontAvenir',
+        fontSize: 15,
     },
 });

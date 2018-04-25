@@ -8,7 +8,7 @@ const maxWidth = Dimensions.get('window').width / 2;
 
 export default EStyleSheet.create({
     $buttonBackgroundColorbase: '$backgroundFilter',
-    $buttonBackgroundColorModifier: '0.1',
+    $buttonBackgroundColorModifier: 0.1,
     mainContainer: {
         padding: 15,
         width: maxWidth,
