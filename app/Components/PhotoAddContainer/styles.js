@@ -4,7 +4,6 @@
 import {Dimensions} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-const maxHeight = Dimensions.get('window').height / 3;
 const maxWidth = Dimensions.get('window').width / 2;
 
 export default EStyleSheet.create({

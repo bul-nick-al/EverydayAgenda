@@ -19,5 +19,6 @@ export default EStyleSheet.create({
     vid: {
         height: maxHeight,
         width: '100%',
-    }
+    },
+
 });
