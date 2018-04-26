@@ -30,7 +30,6 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
             new RNFSPackage(),
-            new RNFSPackage(),
             new ImageResizerPackage(),
             new ImagePickerPackage(),
             new ReactVideoPackage(),
