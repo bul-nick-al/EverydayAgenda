@@ -21,10 +21,9 @@ class ImpressionEdit extends Component {
 
     handleTextEditShown = () => {
         this.refs.modal.open();
-    } ;
+    };
 
     handleSavePress = () => {
-        console.warn(this.state.text);
         this.refs.modal.close();
     };
 
@@ -68,17 +67,23 @@ class ImpressionEdit extends Component {
                     ref={"modal"}
                     isDisabled={this.state.isEditOpened}
                 >
-                    <Text style={styles.title}>Tell us about your day</Text>
-                    <TextInput
-                        style={styles.input}
-                        underlineColorAndroid='white'
-                        onChangeText={(value) => this.setState({text: value})}
-                        value={this.state.text}
-                    />
-                    <ButtonWithBorders
-                        text={'Save'}
-                        onPress={this.handleSavePress}
-                    />
+                    <View>
+                        <Text style={styles.title}>Tell us about your day</Text>
+                        <TextInput
+                            style={styles.input}
+                            underlineColorAndroid='white'
+                            onChangeText={(value) => this.setState({text: value})}
+                            value={this.state.text}
+                        />
+                    </View>
+                    <View
+                        style={{position: 'absolute', left: 0, right: 0, bottom: 10}}
+                    >
+                        <ButtonWithBorders
+                            text={'Save'}
+                            onPress={this.handleSavePress}
+                        />
+                    </View>
                 </Modal>
                 <ScrollView>
                     <View style={{flex: 1, justifyContent: 'space-evenly'}}>
@@ -95,25 +100,29 @@ class ImpressionEdit extends Component {
                                 text={this.state.text}
                             />
                         </View>
-                        <View>
-                            <ButtonWithBorders text="SUBMIT" onPress={this.props.press}/>
-                        </View>
                     </View>
                 </ScrollView>
+                <View
+                    style={{marginBottom: 15}}
+                >
+                    <ButtonWithBorders
+                        text="SUBMIT"
+                        onPress={this.props.press}
+                    />
+                </View>
             </View>
         );
     }
 }
 
 const styles = EStyleSheet.create({
-    modal:{
+    modal: {
         height: 250,
         width: 300,
         backgroundColor: '$backgroundFilter',
         borderRadius: 10,
     },
     input: {
-        // flex: 1,
         paddingHorizontal: 20,
         fontFamily: '$fontAvenir',
         fontSize: 18,
