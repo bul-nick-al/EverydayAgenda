@@ -3,19 +3,52 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import {View, Image, Text} from 'react-native';
+import {View, Image, TouchableHighlight} from 'react-native';
+import color from 'color';
 import styles from './styles';
-import PhotoUpload from 'react-native-photo-upload';
 
-const PhotoAddContainer = ({image, children}) => (
-    <View style={styles.mainContainer}>
-        <View style={styles.photoAddContainer}>
-            <PhotoUpload>
-                <Image resizeMode="contain" style={styles.image} source={require('../../res/images/icons/picture.png')}/>
-                {/*<Text>Photo</Text>*/}
-            </PhotoUpload>
+const PhotoAddContainer = (props) => {
+
+    const {onPress, imageSrc} = props;
+    const underlayColor = color(styles.$buttonBackgroundColorbase).darken(styles.$buttonBackgroundColorModifier);
+    if (imageSrc === null) {
+        return (
+            <View style={styles.mainContainer}>
+                <TouchableHighlight
+                    underlayColor={underlayColor}
+                    style={styles.photoAddContainer}
+                    onPress={onPress}
+                >
+                    <Image
+                        resizeMode="contain"
+                        style={styles.image}
+                        source={require('../../res/images/icons/picture.png')}
+                    />
+                </TouchableHighlight>
+            </View>
+        );
+    }
+
+    return (
+        <View style={styles.mainContainer}>
+            <TouchableHighlight
+                underlayColor={underlayColor}
+                style={styles.photoAddContainer}
+                onPress={onPress}
+            >
+                <Image
+                    resizeMode="cover"
+                    style={styles.imageBackground}
+                    source={{uri: imageSrc.uri}}
+                />
+            </TouchableHighlight>
         </View>
-    </View>
-);
+    );
+};
+
+PhotoAddContainer.propTypes = {
+    onPress: PropTypes.func,
+    imageSrc: PropTypes.object,
+};
 
 export default PhotoAddContainer;

@@ -13,6 +13,7 @@ class ImpressionEdit extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            photoSource: null,
             videoSource: null,
             text: null,
             isEditOpened: false,
@@ -25,6 +26,37 @@ class ImpressionEdit extends Component {
 
     handleSavePress = () => {
         this.refs.modal.close();
+    };
+
+    handlePressPhoto = () => {
+        var ImagePicker = require('react-native-image-picker');
+
+        var options = {
+            title: 'Select photo',
+            mediaType: 'photo',
+            storageOptions: {
+                skipBackup: true,
+                path: 'images',
+            }
+        };
+
+        ImagePicker.showImagePicker(options, (response) => {
+            console.log('Response = ', response);
+
+            if (response.didCancel) {
+                console.log('User cancelled image picker');
+            }
+            else if (response.error) {
+                console.log('ImagePicker Error: ', response.error);
+            }
+            else {
+                let source = {uri: response.uri};
+
+                this.setState({
+                    photoSource: source,
+                });
+            }
+        });
     };
 
     handlePressVideo = () => {
@@ -90,7 +122,10 @@ class ImpressionEdit extends Component {
                 <ScrollView>
                     <View style={{flex: 1, justifyContent: 'space-evenly'}}>
                         <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-                            <PhotoAddContainer/>
+                            <PhotoAddContainer
+                                onPress={this.handlePressPhoto}
+                                imageSrc={this.state.photoSource}
+                            />
                             <VideoAddContainer
                                 onPress={this.handlePressVideo}
                                 videoSrc={this.state.videoSource}
