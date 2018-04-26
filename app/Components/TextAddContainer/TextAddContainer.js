@@ -51,7 +51,6 @@ const TextAddContainer = (props) => {
 TextAddContainer.propTypes = {
   onPress: PropTypes.func,
   text: PropTypes.string,
-
 };
 
 export default TextAddContainer;

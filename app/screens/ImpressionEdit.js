@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {View, TextInput, Text} from 'react-native';
 import {ScrollView} from 'react-native';
+import Modal from 'react-native-modalbox';
+import EStyleSheet from 'react-native-extended-stylesheet';
 import {PhotoAddContainer} from "../Components/PhotoAddContainer";
 import {VideoAddContainer} from "../Components/VideoAddContainer";
 import {TextAddContainer} from "../Components/TextAddContainer";
@@ -12,9 +14,19 @@ class ImpressionEdit extends Component {
         super(props);
         this.state = {
             videoSource: null,
-            text: null
+            text: null,
+            isEditOpened: false,
         }
     }
+
+    handleTextEditShown = () => {
+        this.refs.modal.open();
+    } ;
+
+    handleSavePress = () => {
+        console.warn(this.state.text);
+        this.refs.modal.close();
+    };
 
     handlePressVideo = () => {
         var ImagePicker = require('react-native-image-picker');
@@ -47,19 +59,28 @@ class ImpressionEdit extends Component {
         });
     };
 
-    handlePressTextEdit = () => {
-        let text = 'Hello';
-
-        this.setState({
-            text: text,
-        });
-    };
-
     render() {
         return (
             <View style={{flex: 1, backgroundColor: 'transparent', justifyContent: 'center'}}>
+                <Modal
+                    style={styles.modal}
+                    position={"center"}
+                    ref={"modal"}
+                    isDisabled={this.state.isEditOpened}
+                >
+                    <Text style={styles.title}>Tell us about your day</Text>
+                    <TextInput
+                        style={styles.input}
+                        underlineColorAndroid='white'
+                        onChangeText={(value) => this.setState({text: value})}
+                        value={this.state.text}
+                    />
+                    <ButtonWithBorders
+                        text={'Save'}
+                        onPress={this.handleSavePress}
+                    />
+                </Modal>
                 <ScrollView>
-                    {/*<CalendarHeader/>*/}
                     <View style={{flex: 1, justifyContent: 'space-evenly'}}>
                         <View style={{flexDirection: 'row', justifyContent: 'center'}}>
                             <PhotoAddContainer/>
@@ -70,7 +91,7 @@ class ImpressionEdit extends Component {
                         </View>
                         <View style={{alignItems: 'center', justifyContent: 'center'}}>
                             <TextAddContainer
-                                onPress={this.handlePressTextEdit}
+                                onPress={() => this.handleTextEditShown()}
                                 text={this.state.text}
                             />
                         </View>
@@ -84,7 +105,28 @@ class ImpressionEdit extends Component {
     }
 }
 
+const styles = EStyleSheet.create({
+    modal:{
+        height: 250,
+        width: 300,
+        backgroundColor: '$backgroundFilter',
+        borderRadius: 10,
+    },
+    input: {
+        // flex: 1,
+        paddingHorizontal: 20,
+        fontFamily: '$fontAvenir',
+        fontSize: 18,
+        color: '$white',
+    },
+    title: {
+        paddingTop: 10,
+        textAlign: 'center',
+        fontFamily: '$fontAvenir',
+        fontSize: 20,
+        color: '$white',
+    },
+});
 
-export
-default
-ImpressionEdit;
+
+export default ImpressionEdit;
