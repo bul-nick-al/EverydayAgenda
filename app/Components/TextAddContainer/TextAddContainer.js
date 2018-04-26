@@ -15,7 +15,7 @@ const TextAddContainer = (props) => {
 
   const underlayColor = color(styles.$buttonBackgroundColorbase).darken(styles.$buttonBackgroundColorModifier);
 
-  if (text === null) {
+  if (text === null || text === '') {
     return (
       <View style={styles.mainContainer}>
         <TouchableHighlight

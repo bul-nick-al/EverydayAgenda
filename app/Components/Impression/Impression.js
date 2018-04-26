@@ -6,13 +6,12 @@ import {TextNote} from "../TextNote";
 import {GeotagContainer} from "../GeotagContainer";
 
 const Impression = ({photoURL, videoURL, text}) => {
-
     return (
         <View style={{flex: 1, backgroundColor: 'transparent', justifyContent: 'center'}}>
             <ScrollView>
-                <PhotoContainer photoURL={photoURL}/>
-                <VideoContainer videoURL={videoURL}/>
-                <TextNote text={text}/>
+                {!photoURL.includes('-1')&&<PhotoContainer photoURL={photoURL}/>}
+                {(videoURL !== '')&&<VideoContainer videoURL={videoURL}/>}
+                {(text !== '')&&<TextNote text={text}/>}
                 {/*<GeotagContainer/>*/}
             </ScrollView>
         </View>

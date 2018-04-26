@@ -13,7 +13,7 @@ export default EStyleSheet.create({
         color: '$white',
         fontSize: 10,
         paddingHorizontal: 30,
-        paddingBottom:5,
+        paddingVertical:10,
         fontWeight: '300',
     },
 });

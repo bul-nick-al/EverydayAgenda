@@ -7,6 +7,12 @@ import {PhotoAddContainer} from "../Components/PhotoAddContainer";
 import {VideoAddContainer} from "../Components/VideoAddContainer";
 import {TextAddContainer} from "../Components/TextAddContainer";
 import {ButtonWithBorders} from "../Components/ButtonWithBorders";
+import {Dimensions} from 'react-native';
+import {sendVideo} from "../utils/clienRest";
+import {connect} from "react-redux";
+import {sendImpression} from "../actions/impression";
+
+const maxHeight = Dimensions.get('window').height / 3;
 
 class ImpressionEdit extends Component {
 
@@ -15,10 +21,14 @@ class ImpressionEdit extends Component {
         this.state = {
             photoSource: null,
             videoSource: null,
-            text: null,
+            text: '',
             isEditOpened: false,
         }
     }
+
+    submitImpression = () => {
+        this.props.dispatch(sendImpression(this.state.photoSource, this.state.videoSource, this.state.text))
+    };
 
     handleTextEditShown = () => {
         this.refs.modal.open();
@@ -144,7 +154,7 @@ class ImpressionEdit extends Component {
                 >
                     <ButtonWithBorders
                         text="SUBMIT"
-                        onPress={this.props.press}
+                        onPress={this.submitImpression}
                     />
                 </View>
             </View>
@@ -175,4 +185,4 @@ const styles = EStyleSheet.create({
 });
 
 
-export default ImpressionEdit;
+export default connect()(ImpressionEdit);

@@ -6,8 +6,9 @@ import {StyleSheet} from "react-native";
 
 export default EStyleSheet.create({
     text: {
+
         color: '$white',
-        fontSize: 20,
+        fontSize: 15,
         fontWeight: '300',
         fontFamily: '$fontAvenir',
     },

@@ -5,8 +5,11 @@ import Stories from '../screens/Stories'
 import ImpressionScreen from "../screens/ImpressionScreen";
 import {CalendarHeader} from '../Components/CalendarHeader'
 import CalendarScreen from "../screens/CalendarScreen";
+import Impression from "../Components/Impression/Impression";
+import StoryScreen from "../screens/StoryScreen";
+import {StoryHeader} from "../Components/StoryHeader/";
 
-const onCalendarPress = () => this.navigate('CalendarScreen');
+const onPress = () => this.navigate('CalendarScreen');
 
 const HomeStack = StackNavigator(
     {
@@ -45,10 +48,10 @@ const StoriesNavigator = StackNavigator(
         },
 
         Story: {
-            screen: ImpressionScreen,
-            navigationOptions: {
-                header: ()=>null
-            },
+            screen: StoryScreen,
+            navigationOptions:{
+                header: (props) => (<StoryHeader navigation={props.navigation}/>),
+            }
         },
     },
     {
