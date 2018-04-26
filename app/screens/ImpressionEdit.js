@@ -70,6 +70,8 @@ class ImpressionEdit extends Component {
                     <View>
                         <Text style={styles.title}>Tell us about your day</Text>
                         <TextInput
+                            defaultValue={"Hello"}
+                            multiline={true}
                             style={styles.input}
                             underlineColorAndroid='white'
                             onChangeText={(value) => this.setState({text: value})}

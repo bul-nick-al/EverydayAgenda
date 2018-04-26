@@ -6,9 +6,12 @@ import PropTypes from 'prop-types';
 import { View, Image, TouchableHighlight, Text } from 'react-native';
 import color from 'color';
 import styles from './styles';
+import {Dimensions} from 'react-native';
 
 const TextAddContainer = (props) => {
   const { onPress, text } = props;
+
+    const maxWidth = Dimensions.get('window').width / 2;
 
   const underlayColor = color(styles.$buttonBackgroundColorbase).darken(styles.$buttonBackgroundColorModifier);
 
@@ -39,7 +42,8 @@ const TextAddContainer = (props) => {
         onPress={onPress}
       >
         <Text
-          style={styles.text}
+            numberOfLines={6}
+            style={styles.text}
         >
           {text}
         </Text>

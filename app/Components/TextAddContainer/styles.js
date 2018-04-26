@@ -30,5 +30,8 @@ export default EStyleSheet.create({
         fontFamily: '$fontAvenir',
         fontSize: 20,
         color: '$white',
+        height: 90,
+        width: 90,
+        textAlign: 'center',
     },
 });
