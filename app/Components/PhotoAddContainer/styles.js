@@ -13,8 +13,16 @@ export default EStyleSheet.create({
         padding: 15,
         width: maxWidth,
     },
-    photoAddContainer: {
+    photoAddContainer1: {
         padding: 15,
+        borderRadius: maxWidth / 2,
+        backgroundColor: '$backgroundFilter',
+        width: maxWidth - 30,
+        height: maxWidth - 30,
+        alignItems: 'center',
+        overflow: 'hidden',
+    },
+    photoAddContainer2: {
         borderRadius: maxWidth / 2,
         backgroundColor: '$backgroundFilter',
         width: maxWidth - 30,

@@ -8,7 +8,6 @@ import color from 'color';
 import styles from './styles';
 
 const PhotoAddContainer = (props) => {
-
     const {onPress, imageSrc} = props;
     const underlayColor = color(styles.$buttonBackgroundColorbase).darken(styles.$buttonBackgroundColorModifier);
     if (imageSrc === null) {
@@ -16,7 +15,7 @@ const PhotoAddContainer = (props) => {
             <View style={styles.mainContainer}>
                 <TouchableHighlight
                     underlayColor={underlayColor}
-                    style={styles.photoAddContainer}
+                    style={styles.photoAddContainer1}
                     onPress={onPress}
                 >
                     <Image
@@ -33,7 +32,7 @@ const PhotoAddContainer = (props) => {
         <View style={styles.mainContainer}>
             <TouchableHighlight
                 underlayColor={underlayColor}
-                style={styles.photoAddContainer}
+                style={styles.photoAddContainer2}
                 onPress={onPress}
             >
                 <Image

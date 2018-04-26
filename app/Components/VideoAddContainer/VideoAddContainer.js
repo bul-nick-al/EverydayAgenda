@@ -18,7 +18,7 @@ const VideoAddContainer = (props) => {
             <View style={styles.mainContainer}>
                 <TouchableHighlight
                     underlayColor={underlayColor}
-                    style={styles.videoAddContainer}
+                    style={styles.videoAddContainer1}
                     onPress={onPress}
                 >
                     <Image
@@ -35,7 +35,7 @@ const VideoAddContainer = (props) => {
         <View style={styles.mainContainer}>
             <TouchableHighlight
                 underlayColor={underlayColor}
-                style={styles.videoAddContainer}
+                style={styles.videoAddContainer2}
                 onPress={onPress}
             >
                 <Video
