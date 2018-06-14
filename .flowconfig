@@ -27,6 +27,7 @@ node_modules/react-native/flow/
 node_modules/react-native/flow-github/
 
 [options]
+module.ignore_non_literal_requires=true
 emoji=true
 
 module.system=haste

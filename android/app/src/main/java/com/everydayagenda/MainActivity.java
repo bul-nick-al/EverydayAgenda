@@ -2,6 +2,7 @@ package com.everydayagenda;
 
 import com.facebook.react.ReactActivity;
 
+
 public class MainActivity extends ReactActivity {
 
     /**
@@ -12,4 +13,5 @@ public class MainActivity extends ReactActivity {
     protected String getMainComponentName() {
         return "EverydayAgenda";
     }
+
 }

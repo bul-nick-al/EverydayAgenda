@@ -5,14 +5,15 @@ export default EStyleSheet.create({
     container: {
         width: '85%',
         borderBottomWidth: StyleSheet.hairlineWidth,
-        borderColor:'$white',
-        marginBottom: 15
+        borderColor: '$white',
+        marginBottom: 15,
     },
 
     label: {
         color: '$white',
         fontSize: 20,
         fontWeight: '300',
+        fontFamily: '$fontAvenir',
     },
 
     input: {
@@ -22,7 +23,6 @@ export default EStyleSheet.create({
         fontWeight: '300',
         paddingHorizontal: 15,
         paddingBottom: 5,
-
-
+        fontFamily: '$fontAvenir',
     }
 });
